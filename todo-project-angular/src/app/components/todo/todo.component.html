@@ -1,0 +1,23 @@
+<form #todoList="ngForm" (click)="formValidator()" autocomplete="off">
+  <mat-form-field>
+    <input matInput placeholder="Input" [(ngModel)]="description" name="item" placeholder="saisir un text" required />
+  </mat-form-field>
+  <button type="button" (click)="Add()" [disabled]="!todoList.form.valid">Valider</button>
+</form>
+
+<p>Nombre de Tâches: {{ count }}</p>
+
+
+<mat-list role="list" *ngFor="let todo of todos;let i = index">
+  <mat-list-item role="listitem"><span *ngIf="todo.isCheck; else check" [ngStyle]="isCheckStyle()">
+    {{todo.description}}
+  </span>
+  <span>
+    <button type="button" (click)="Remove(i)">X</button>
+  </span>
+  <button class="btn btn-warning btn-xs" (click)="Cancel(i)"> Cancel </button>
+  <button class="btn btn-primary btn-xs" (click)="Edit(i)"> Edit </button></mat-list-item>
+  <ng-template #check>
+    {{todo.description}}
+  </ng-template>
+</mat-list>
