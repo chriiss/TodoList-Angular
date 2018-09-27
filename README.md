@@ -8,7 +8,7 @@ this and an angular project if you do not have nodejs and npm install please ins
 1. install node
 2.install angular cli 
 3.go to the project 
-4. npm install 
+4.npm install 
 5.ng serve
 
 
