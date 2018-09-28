@@ -2,6 +2,7 @@ import { Component, OnInit, ViewChild } from '@angular/core';
 import { NgForm, Validators } from '@angular/forms';
 import { TodoService } from '../../shared/todo.service';
 import { Item } from '../../interface/item';
+import { LocalStorage } from 'ngx-store';
 
 @Component({
   selector: 'app-todo',
@@ -11,10 +12,10 @@ import { Item } from '../../interface/item';
 export class TodoComponent implements OnInit {
   @ViewChild('todoList') form: NgForm;
 
-  todos: Item[] = [];
+  @LocalStorage() todos: Item[] = [];
   description: string;
-  isCheck: boolean = false;
-  count: number = 0;
+  @LocalStorage() count: number = 0;
+  @LocalStorage() isNight: boolean = false;
 
   constructor(private todoservice: TodoService) {
   }
@@ -36,29 +37,20 @@ export class TodoComponent implements OnInit {
     this.count--;
   }
 
-  Edit(i: number) {
-    let description = this.todos[i].description;
-    let result = prompt("Modifier votre description ?", description);
-    if (result !== null && result !== ""){
-      this.todos[i].description = result;
-    }
+  Clear(){
+    this.todos.splice(0);
+    this.count = 0;
   }
 
-  Cancel(i: number){
-    if (this.todos[i].isCheck){
-      this.todos[i].isCheck = false;
-      this.count++;
-    }else{
-      this.todos[i].isCheck  = true;
-      this.count--;
-    }
- }
+  Night() {
+    this.isNight = !this.isNight;
+  }
 
- isCheckStyle() {
-   return {
-     'color': this.isCheck ? 'blue' : 'green'
-   }
- }
+  isNightStyle() {
+    return {
+      'background' : this.isNight ? 'black' : 'blue'
+    }
+  }
 
   formValidator() {
     this.form.controls['item'].setValidators(

@@ -6,6 +6,7 @@ import { TodoComponent } from './components/todo/todo.component';
 import { MasterLayoutComponent } from './components/master-layout/master-layout.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatFormFieldModule, MatButtonModule, MatInputModule, MatListModule} from '@angular/material';
+import { WebStorageModule } from 'ngx-store';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import {MatFormFieldModule, MatButtonModule, MatInputModule, MatListModule} from
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
-    MatListModule
+    MatListModule,
+    WebStorageModule
   ],
   providers: [],
   bootstrap: [AppComponent]
