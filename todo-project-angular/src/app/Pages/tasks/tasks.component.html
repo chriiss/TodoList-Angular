@@ -1,0 +1,5 @@
+<app-task-form (getAdd)="add($event)"></app-task-form>
+
+<div *ngFor="let item of tasks; let i = index">
+    <app-task-list [TasksList]="item" (getRemove)="remove(i)"></app-task-list>
+</div>
