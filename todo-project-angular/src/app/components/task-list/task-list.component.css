@@ -1,3 +1,26 @@
-/*ul button {
+ul li {
+  display: flex;
+  width: 95%;
+  margin-top: 50px !important;
+  padding: 50px 0px 50px 0px;
+  font-size: 30px;
+  border-radius: 10px;
+  border: 1px solid #cfcfcf;
+  margin: auto;
+  box-shadow: 9px 6px 6px #cfcfcf,-9px 6px 0px #cfcfcf;
+}
 
-}*/
+ul li .item {
+  width: 0%;
+  display: table;
+  margin: auto;
+}
+
+ul li .button {
+  width: 0%;
+}
+
+ul li .button button {
+  float: right;
+  margin-right: 50px;
+}

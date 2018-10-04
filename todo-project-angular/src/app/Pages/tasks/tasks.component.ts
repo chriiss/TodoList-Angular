@@ -11,6 +11,7 @@ import { LocalStorage } from 'ngx-store';
 export class TasksComponent implements OnInit {
 
   @LocalStorage() tasks: Task[] = [];
+  @LocalStorage() count: number = 0;
   id: number;
   itemData: string;
 
@@ -24,10 +25,16 @@ export class TasksComponent implements OnInit {
       id: this.id,
       data: item.itemData
     });
+    this.count++;
   }
 
   remove(index: number) {
     this.tasks.splice(index, 1);
+    this.count--;
   }
 
+  clear() {
+    this.tasks.splice(0);
+    this.count = 0;
+  }
 }

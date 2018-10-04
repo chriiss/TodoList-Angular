@@ -9,13 +9,17 @@ import { TasksComponent } from './Pages/tasks/tasks.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
 import { MyModuleRoutingModule } from './my-module/my-module-routing.module';
 import { TaskFormComponent } from './components/task-form/task-form.component';
+import { TaskClearComponent } from './components/task-clear/task-clear.component';
+import { TaskCountComponent } from './components/task-count/task-count.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TasksComponent,
     TaskListComponent,
-    TaskFormComponent
+    TaskFormComponent,
+    TaskClearComponent,
+    TaskCountComponent
   ],
   imports: [
     BrowserModule,

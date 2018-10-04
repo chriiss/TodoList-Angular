@@ -8,7 +8,7 @@ import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 export class TaskListComponent implements OnInit {
 
   @Input('TasksList') item: {data: string};
-  @Output() getRemove = new EventEmitter<{index: number}>();
+  @Output() getRemove = new EventEmitter();
 
   constructor() { }
 
