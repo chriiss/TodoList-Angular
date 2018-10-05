@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../interface/task';
-import { BehaviorSubject } from 'rxjs';
+import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Color } from '../interface/color';
 
 @Injectable({
   providedIn: 'root'
@@ -9,5 +9,9 @@ import { Observable } from 'rxjs';
 export class TaskService {
 
 
-  constructor() { }
+  constructor(private _http: HttpClient) { }
+
+  getDataColor() {
+    return this._http.get<Color>('../../assets/color.json');
+  }
 }

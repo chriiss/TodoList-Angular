@@ -44,3 +44,7 @@ table {
 }
 html, body { height: 100%; }
 body { margin: 0; font-family: 'Roboto', sans-serif; }
+
+button i {
+	font-size: 35px !important;
+}

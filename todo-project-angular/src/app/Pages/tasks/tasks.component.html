@@ -4,6 +4,15 @@
 
 <app-task-clear (getClear)="clear($event)"></app-task-clear>
 
-<div *ngFor="let item of tasks; let i = index">
+<select [(ngModel)]="colorChange">
+   <option *ngFor="let color of dataColor" value="{{color.value}}">{{color.color}}</option>
+</select>
+
+<div class="item-container" [ngStyle]="colorChangeItems()">
+    <div [hidden]="isEmpty" class="empty-container">
+        <p>Vote liste d'items et vide</p>
+    </div>
+  <div *ngFor="let item of tasks; let i = index">
     <app-task-list [TasksList]="item" (getRemove)="remove(i)"></app-task-list>
+  </div>
 </div>

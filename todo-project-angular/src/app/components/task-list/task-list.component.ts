@@ -9,6 +9,7 @@ export class TaskListComponent implements OnInit {
 
   @Input('TasksList') item: {data: string};
   @Output() getRemove = new EventEmitter();
+  valueDate: number = Date.now();
 
   constructor() { }
 

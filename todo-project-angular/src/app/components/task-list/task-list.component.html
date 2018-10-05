@@ -1,10 +1,12 @@
 <ul>
   <li>
-    <div class="item">
-      {{item.data}}
-    </div>
-    <div class="button">
-      <button type="button" (click)="removeValue($event)">X</button>
+    <div class="list-container">
+      <div class="item">
+        {{item.data}}
+      </div>
+      <div class="button">
+        <button type="button" (click)="removeValue($event)"><i class="material-icons">delete</i></button>
+      </div>
     </div>
   </li>
 </ul>
