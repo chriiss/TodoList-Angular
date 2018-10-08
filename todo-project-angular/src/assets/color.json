@@ -1,7 +1,7 @@
 [
     {"id": 0, "value": "#FFFFFF", "color": "Defaut"},
-    {"id": 1, "value": "#FE2E2E", "color": "Rouge"},
-    {"id": 2, "value": "#2E64FE", "color": "Bleu"},
+    {"id": 1, "value": "#FA5858", "color": "Rouge"},
+    {"id": 2, "value": "#819FF7", "color": "Bleu"},
     {"id": 3, "value": "#81F781", "color": "Vert"},
     {"id": 4, "value": "#F3F781", "color": "Jaune"},
     {"id": 5, "value": "#BE81F7", "color": "Violet"},

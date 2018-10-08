@@ -5,19 +5,22 @@ ul li .list-container {
   padding: 50px 0px 55px 0px;
   font-size: 30px;
   border-radius: 10px;
-  border: 1px solid #cfcfcf;
+  border: 1px solid #151515;
   margin: auto;
-  box-shadow: 0px 5px  #cfcfcf;
+  box-shadow: 0px 4px  #151515;
 }
 
 ul li .list-container .item {
-  width: 0%;
-  display: table;
-  margin: auto;
+  width: 100%;
+  padding-left: 30px;
+}
+
+.item p {
+  word-break: break-word;
 }
 
 ul li .list-container .button {
-  width: 0%;
+  width: 100%;
 }
 
 ul li .list-container .button button {
@@ -27,4 +30,8 @@ ul li .list-container .button button {
   border: none;
   cursor: pointer;
   font-weight: bold;
+}
+
+.active {
+  text-decoration: line-through;
 }

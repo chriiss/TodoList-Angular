@@ -1,4 +1,5 @@
 import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
+import { LocalStorage } from 'ngx-store';
 
 @Component({
   selector: 'app-task-list',
@@ -9,7 +10,7 @@ export class TaskListComponent implements OnInit {
 
   @Input('TasksList') item: {data: string};
   @Output() getRemove = new EventEmitter();
-  valueDate: number = Date.now();
+
 
   constructor() { }
 

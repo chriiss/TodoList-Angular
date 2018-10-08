@@ -1,10 +1,10 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule, ReactiveFormsModule }   from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import {MatFormFieldModule, MatButtonModule, MatInputModule, MatListModule} from '@angular/material';
+import {MatFormFieldModule, MatButtonModule, MatInputModule, MatListModule, MatSelectModule, MatMenuModule} from '@angular/material';
 import { WebStorageModule } from 'ngx-store';
 import { TasksComponent } from './Pages/tasks/tasks.component';
 import { TaskListComponent } from './components/task-list/task-list.component';
@@ -25,12 +25,15 @@ import { TaskCountComponent } from './components/task-count/task-count.component
   imports: [
     BrowserModule,
     FormsModule,
+    ReactiveFormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
     MatFormFieldModule,
     MatButtonModule,
     MatInputModule,
     MatListModule,
+    MatMenuModule,
+    MatSelectModule,
     WebStorageModule,
     MyModuleRoutingModule
   ],

@@ -1,7 +1,24 @@
+form {
+  display: flex;
+}
+
 form mat-form-field {
-    width: 80%;
+    width: 100%;
+}
+
+input {
+    height: 35px;
+    padding-left: 5px;
 }
 
 form button[type="reset"] {
-    width: 20%;
+    border-radius: 80%;
+    width: 80px;
+    height: 80px;
+    margin-left: 15px;
+}
+span {
+    color: #8A0808;
+    margin-left: 10px;
+    font-weight: bold;
 }

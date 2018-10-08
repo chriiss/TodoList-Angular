@@ -1,6 +1,10 @@
-<form>
+<form novalidate [formGroup]="formAdd" autocomplete="off">
   <mat-form-field class="example-full-width">
-      <input matInput type="text" [(ngModel)]="newItem" name="item" placeholder="Saisir votre liste">
+      <input matInput type="text" [(ngModel)]="newItem" name="item" formControlName="newItem" placeholder="Saisir votre liste">
   </mat-form-field>
-  <button type="reset" (click)="addValue()"><i class="material-icons">add</i></button>
+  <button type="reset" mat-flat-button (click)="addValue()" [disabled]="formAdd.invalid"><i class="material-icons">add</i></button>
 </form>
+
+<span *ngIf="newItem?.length > 45">
+  45 Caractères maximum
+</span>

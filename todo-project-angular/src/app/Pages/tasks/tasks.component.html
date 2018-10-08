@@ -1,18 +1,35 @@
-<app-task-form (getAdd)="add($event)"></app-task-form>
+<div class="tasks-container" [ngStyle]="colorChangeItems()">
+  <div class="task-menu">
+    <h1>TaskList</h1>
+    <button mat-button [matMenuTriggerFor]="menu"><i class="material-icons">more_vert</i></button>
+    <div class="mat-menu">
+      <mat-menu #menu="matMenu">
+        <app-task-clear (getClear)="clear($event)"></app-task-clear><br />
 
-<app-task-count [TasksCount]="count"></app-task-count>
-
-<app-task-clear (getClear)="clear($event)"></app-task-clear>
-
-<select [(ngModel)]="colorChange">
-   <option *ngFor="let color of dataColor" value="{{color.value}}">{{color.color}}</option>
-</select>
-
-<div class="item-container" [ngStyle]="colorChangeItems()">
-    <div [hidden]="isEmpty" class="empty-container">
-        <p>Vote liste d'items et vide</p>
+        <mat-form-field>
+          <label>Couleur fond</label>
+          <mat-select [(ngModel)]="colorChange">
+            <mat-option *ngFor="let color of dataColor" value="{{color.value}}">{{color.color}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </mat-menu>
     </div>
-  <div *ngFor="let item of tasks; let i = index">
-    <app-task-list [TasksList]="item" (getRemove)="remove(i)"></app-task-list>
+  </div>
+
+  <div class="task-form">
+    <app-task-form (getAdd)="add($event)"></app-task-form>
+  </div>
+
+  <app-task-count [TasksCount]="count"></app-task-count>
+
+
+  <div class="item-container">
+    <div [hidden]="isEmpty" class="empty-container">
+      <p><i class="material-icons">assignment_turned_in</i> Vote liste d'items et vide</p>
+    </div>
+    <div *ngFor="let item of tasks; let i = index">
+      <app-task-list [TasksList]="item" (getRemove)="remove(i)" (getChecked)="checked($event)"></app-task-list>
+    </div>
   </div>
 </div>
+
